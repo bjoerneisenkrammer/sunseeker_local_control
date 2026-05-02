@@ -1,0 +1,36 @@
+{
+  "entity": {
+    "button": {
+      "edge_cut": {
+        "name": "Sunseeker Kantenschnitt"
+      }
+    },
+    "sensor": {
+      "battery": {
+        "name": "Sunseeker Akku"
+      }
+    },
+    "switch": {
+      "rain_sensor": {
+        "name": "Sunseeker Regensensor"
+      }
+    }
+  },
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sunseeker Local MQTT einrichten",
+        "description": "Bitte gib die Geräte-ID deines Mähers ein.\n\n**Wo finde ich sie?**\n1. Auf dem Aufkleber am Mäher (meist eine 20-stellige Seriennummer).\n2. In der offiziellen Sunseeker-App (oder Partnermarke) unter Geräteinfo.\n3. Im lokalen MQTT-Broker-Traffic (nach `device/DEINE_ID/update` suchen).",
+        "data": {
+          "device_id": "Geräte-ID (Seriennummer)"
+        }
+      }
+    },
+    "error": {
+      "empty_id": "Die Geräte-ID darf nicht leer sein."
+    },
+    "abort": {
+      "already_configured": "Dieser Mäher ist bereits konfiguriert."
+    }
+  }
+}

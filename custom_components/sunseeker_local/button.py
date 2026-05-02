@@ -17,7 +17,7 @@ class SunseekerEdgeCutButton(ButtonEntity):
     def __init__(self, hass, device_id):
         self.hass = hass
         self._device_id = device_id
-        self._attr_name = "Sunseeker Edge Cut"
+        self._attr_translation_key = "edge_cut"
         self._attr_unique_id = f"sunseeker_edge_{device_id}"
         self._attr_icon = "mdi:robot-mower"
 

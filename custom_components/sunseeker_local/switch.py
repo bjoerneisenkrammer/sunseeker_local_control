@@ -17,7 +17,7 @@ class SunseekerRainSwitch(SwitchEntity):
     def __init__(self, device_id):
         """Initialize the switch."""
         self._device_id = device_id
-        self._attr_name = "Sunseeker Rain Sensor"
+        self._attr_translation_key = "rain_sensor"
         self._attr_unique_id = f"sunseeker_rain_{device_id}"
         self._attr_is_on = False
 

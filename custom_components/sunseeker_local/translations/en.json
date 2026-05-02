@@ -1,4 +1,21 @@
 {
+  "entity": {
+    "button": {
+      "edge_cut": {
+        "name": "Sunseeker Edge Cut"
+      }
+    },
+    "sensor": {
+      "battery": {
+        "name": "Sunseeker Battery"
+      }
+    },
+    "switch": {
+      "rain_sensor": {
+        "name": "Sunseeker Rain Sensor"
+      }
+    }
+  },
   "config": {
     "step": {
       "user": {

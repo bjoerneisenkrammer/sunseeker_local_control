@@ -1,4 +1,21 @@
 {
+  "entity": {
+    "button": {
+      "edge_cut": {
+        "name": "Sunseeker Reunaleikkaus"
+      }
+    },
+    "sensor": {
+      "battery": {
+        "name": "Sunseeker Akku"
+      }
+    },
+    "switch": {
+      "rain_sensor": {
+        "name": "Sunseeker Sadetunnistin"
+      }
+    }
+  },
   "config": {
     "step": {
       "user": {
