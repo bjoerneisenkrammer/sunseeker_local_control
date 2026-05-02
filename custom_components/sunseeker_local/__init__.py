@@ -5,7 +5,7 @@ from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS = ["lawn_mower", "sensor", "switch"]
+PLATFORMS = ["button", "lawn_mower", "sensor", "switch"]
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Sunseeker Local from a config entry."""

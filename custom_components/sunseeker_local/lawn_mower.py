@@ -36,7 +36,7 @@ class SunseekerMower(LawnMowerEntity):
                     mode = data.get("mode")
                     if data.get("station", False):
                         self._attr_activity = LawnMowerActivity.DOCKED
-                    elif mode == 1:
+                    elif mode in (1, 4):
                         self._attr_activity = LawnMowerActivity.MOWING
                     elif mode == 2:
                         self._attr_activity = LawnMowerActivity.RETURNING
