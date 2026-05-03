@@ -3,7 +3,8 @@ import logging
 from homeassistant.components.sensor import SensorEntity, SensorDeviceClass, SensorStateClass
 from homeassistant.components import mqtt
 from homeassistant.const import PERCENTAGE
-from .const import CONF_DEVICE_ID, TOPIC_UPDATE
+from homeassistant.helpers.entity import DeviceInfo
+from .const import CONF_DEVICE_ID, DOMAIN, TOPIC_UPDATE
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -20,6 +21,11 @@ class SunseekerBatterySensor(SensorEntity):
         self._device_id = device_id
         self._attr_translation_key = "battery"
         self._attr_unique_id = f"sunseeker_batt_{device_id}"
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, device_id)},
+            name=f"Sunseeker {device_id}",
+            manufacturer="Sunseeker",
+        )
         self._attr_native_unit_of_measurement = PERCENTAGE
         self._attr_device_class = SensorDeviceClass.BATTERY
         self._attr_state_class = SensorStateClass.MEASUREMENT

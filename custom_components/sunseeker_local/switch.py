@@ -2,7 +2,8 @@ import json
 import logging
 from homeassistant.components.switch import SwitchEntity
 from homeassistant.components import mqtt
-from .const import CONF_DEVICE_ID, TOPIC_COMMAND, TOPIC_UPDATE
+from homeassistant.helpers.entity import DeviceInfo
+from .const import CONF_DEVICE_ID, DOMAIN, TOPIC_COMMAND, TOPIC_UPDATE
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -20,6 +21,11 @@ class SunseekerRainSwitch(SwitchEntity):
         self._attr_translation_key = "rain_sensor"
         self._attr_unique_id = f"sunseeker_rain_{device_id}"
         self._attr_is_on = False
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, device_id)},
+            name=f"Sunseeker {device_id}",
+            manufacturer="Sunseeker",
+        )
 
     async def async_added_to_hass(self):
         """Subscribe to MQTT events."""

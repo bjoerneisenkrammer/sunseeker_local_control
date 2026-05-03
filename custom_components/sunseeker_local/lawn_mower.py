@@ -2,7 +2,8 @@ import json
 import logging
 from homeassistant.components.lawn_mower import LawnMowerEntity, LawnMowerEntityFeature, LawnMowerActivity
 from homeassistant.components import mqtt
-from .const import CONF_DEVICE_ID, TOPIC_COMMAND, TOPIC_UPDATE
+from homeassistant.helpers.entity import DeviceInfo
+from .const import CONF_DEVICE_ID, DOMAIN, TOPIC_COMMAND, TOPIC_UPDATE
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -19,6 +20,11 @@ class SunseekerMower(LawnMowerEntity):
         self._device_id = device_id
         self._attr_name = f"Sunseeker {device_id}"
         self._attr_unique_id = f"sunseeker_mower_{device_id}"
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, device_id)},
+            name=f"Sunseeker {device_id}",
+            manufacturer="Sunseeker",
+        )
         self._attr_supported_features = (
             LawnMowerEntityFeature.START | LawnMowerEntityFeature.DOCK | LawnMowerEntityFeature.STOP
         )
