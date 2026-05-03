@@ -2,7 +2,7 @@ import json
 import logging
 from homeassistant.components.switch import SwitchEntity
 from homeassistant.components import mqtt
-from homeassistant.helpers.entity import DeviceInfo
+from homeassistant.helpers.entity import DeviceInfo, EntityCategory
 from .const import CONF_DEVICE_ID, DOMAIN, TOPIC_COMMAND, TOPIC_UPDATE
 
 _LOGGER = logging.getLogger(__name__)
@@ -18,6 +18,8 @@ class SunseekerRainSwitch(SwitchEntity):
     def __init__(self, device_id):
         """Initialize the switch."""
         self._device_id = device_id
+        self._attr_has_entity_name = True
+        self._attr_entity_category = EntityCategory.CONFIG
         self._attr_translation_key = "rain_sensor"
         self._attr_unique_id = f"sunseeker_rain_{device_id}"
         self._attr_is_on = False

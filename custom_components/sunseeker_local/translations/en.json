@@ -2,17 +2,17 @@
   "entity": {
     "button": {
       "edge_cut": {
-        "name": "Sunseeker Edge Cut"
+        "name": "Edge Cut"
       }
     },
     "sensor": {
       "battery": {
-        "name": "Sunseeker Battery"
+        "name": "Battery"
       }
     },
     "switch": {
       "rain_sensor": {
-        "name": "Sunseeker Rain Sensor"
+        "name": "Rain Sensor"
       }
     }
   },

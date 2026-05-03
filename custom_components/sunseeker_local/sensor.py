@@ -19,6 +19,7 @@ class SunseekerBatterySensor(SensorEntity):
     def __init__(self, device_id):
         """Initialize the sensor."""
         self._device_id = device_id
+        self._attr_has_entity_name = True
         self._attr_translation_key = "battery"
         self._attr_unique_id = f"sunseeker_batt_{device_id}"
         self._attr_device_info = DeviceInfo(
